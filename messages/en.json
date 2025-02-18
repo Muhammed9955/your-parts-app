@@ -1,0 +1,38 @@
+{
+  "home": {
+    "title": "Posts",
+    "create": "Create New Post",
+    "edit": "Edit Post",
+    "view": "View Post",
+    "loading": "Loading...",
+    "notFound": "No posts available",
+    "error": "Error loading posts",
+    "deleteConfirm": "Are you sure you want to delete this post?",
+    "Language": "Language"
+  },
+  "actions": {
+    "update": "update",
+    "create": "Create",
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save",
+    "cancel": "Cancel",
+    "back": "Back to posts",
+    "view": "view"
+  },
+  "form": {
+    "title": "Title",
+    "body": "Content",
+    "titleRequired": "Title is required",
+    "bodyRequired": "Content is required",
+    "delete_message": "Are you sure you want to delete this post?"
+  },
+  "pagination": {
+    "prev": "Previous",
+    "next": "Next",
+    "page": "page"
+  },
+  "edit_post": {
+    "title": "edit post"
+  }
+}
