@@ -1,3 +1,5 @@
+"use client";
+
 import type { Post } from "@/types/post";
 import Link from "next/link";
 import { useParams } from "next/navigation";
