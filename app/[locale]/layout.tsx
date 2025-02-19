@@ -9,6 +9,15 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import Navbar from "@/components/layout/Navbar";
 
+import { ReactNode } from "react";
+
+// Define the correct type for the layout props
+type LocaleLayoutProps = {
+  children: ReactNode;
+  params: {
+    locale: string;
+  };
+};
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -26,12 +35,8 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-  // params: { locale },
   params,
-}: Readonly<{
-  children: React.ReactNode;
-  params: { locale: string };
-}>) {
+}: LocaleLayoutProps) {
   const { locale } = await params; // Destructure inside the function body
   // const locale = await params;
   // Ensure that the incoming `locale` is valid
