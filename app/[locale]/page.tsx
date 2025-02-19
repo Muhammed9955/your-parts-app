@@ -19,7 +19,7 @@ export default function PostsPage() {
   const [currentPage, setCurrentPage] = useState(1);
 
   const {
-    data: { total },
+    data: { total, documents },
     isLoading,
     isError,
   } = useAppwritePagination(currentPage, ITEMS_PER_PAGE);
@@ -37,7 +37,7 @@ export default function PostsPage() {
   // // Fetch posts with React Query
   // const { data, isLoading, isError } = useGetPosts(page, limit);
   // console.log({ data });
-  const posts = data?.documents || [];
+  const posts = documents || [];
 
   if (isLoading) {
     return <div className="text-center py-10"> {t("loading")}</div>;

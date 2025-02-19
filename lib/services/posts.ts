@@ -5,19 +5,19 @@ import {
   ID,
 } from "@/lib/appwrite";
 import { Post, CreatePostDto, UpdatePostDto } from "@/types/post";
-import { Query } from "appwrite";
+import { Models, Query } from "appwrite";
 
 // Create a post
 export async function createPost(post: CreatePostDto) {
   return (await databases.createDocument(
-    DATABASE_ID,
-    POSTS_COLLECTION_ID,
+    DATABASE_ID as string,
+    POSTS_COLLECTION_ID as string,
     ID.unique(),
     {
       ...post,
       createdAt: new Date(),
     }
-  )) as unknown as Post;
+  )) as Models.Document;
 }
 
 // // Get all posts with pagination
