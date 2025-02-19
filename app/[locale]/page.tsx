@@ -1,25 +1,25 @@
 // app/[lang]/posts/page.tsx
 "use client";
 
-import { useState } from "react";
+// import { useState } from "react";
 // import Link from "next/link";
-import { useAppwritePagination } from "@/hooks/usePosts";
+// import { useAppwritePagination } from "@/hooks/usePosts";
 import Button from "@/components/ui/Button/Button";
-import Pagination from "@/components/ui/Pagination/Pagination";
-import PostList from "@/components/posts/PostList";
+// import Pagination from "@/components/ui/Pagination/Pagination";
+// import PostList from "@/components/posts/PostList";
 
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
-import { Models } from "appwrite";
+// import { Models } from "appwrite";
 
-const ITEMS_PER_PAGE = 10;
+// const ITEMS_PER_PAGE = 10;
 
-interface AppwritePaginationResponse {
-  total: number;
-  documents: Models.Document[]; // Replace 'any' with your actual document type
-  isLoading: boolean;
-  isError: boolean;
-}
+// interface AppwritePaginationResponse {
+//   total: number;
+//   documents: Models.Document[]; // Replace 'any' with your actual document type
+//   isLoading: boolean;
+//   isError: boolean;
+// }
 
 export default function PostsPage() {
   const t = useTranslations("home");
