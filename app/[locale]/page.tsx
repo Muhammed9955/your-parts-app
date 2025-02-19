@@ -3,10 +3,9 @@
 
 import { useState } from "react";
 // import Link from "next/link";
-import { useAppwritePagination, useGetPosts } from "@/hooks/usePosts";
+import { useAppwritePagination } from "@/hooks/usePosts";
 import Button from "@/components/ui/Button/Button";
 import Pagination from "@/components/ui/Pagination/Pagination";
-import SearchBar from "@/components/SearchBar";
 import PostList from "@/components/posts/PostList";
 
 import { useTranslations } from "next-intl";
@@ -19,7 +18,7 @@ export default function PostsPage() {
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  const { data, isLoading, isError, error } = useAppwritePagination(
+  const { data, isLoading, isError } = useAppwritePagination(
     currentPage,
     ITEMS_PER_PAGE
   );

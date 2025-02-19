@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 interface PaginationProps {
   currentPage: number;
   totalPages: number;
-  onPageChange: () => void;
+  onPageChange: (n: number) => void;
 }
 
 const Pagination = ({

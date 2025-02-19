@@ -4,12 +4,7 @@ import {
   POSTS_COLLECTION_ID,
   ID,
 } from "@/lib/appwrite";
-import {
-  Post,
-  CreatePostDto,
-  UpdatePostDto,
-  PaginatedResult,
-} from "@/types/post";
+import { Post, CreatePostDto, UpdatePostDto } from "@/types/post";
 import { Query } from "appwrite";
 
 // Create a post
@@ -146,8 +141,8 @@ export async function getPaginatedDocuments(page = 1, limit = 10) {
 
   try {
     const response = await databases.listDocuments(
-        DATABASE_ID,
-        POSTS_COLLECTION_ID,
+      DATABASE_ID,
+      POSTS_COLLECTION_ID,
       [
         // Add any queries here if needed
       ],
