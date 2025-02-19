@@ -3,9 +3,10 @@ import { Post } from "@/types/post";
 import { useDeletePost } from "@/hooks/usePosts";
 import { PostCard } from "./PostCard/PostCard";
 import { useTranslations } from "next-intl";
+import { Models } from "appwrite";
 
 interface PostListProps {
-  posts: Post[];
+  posts: Models.Document[];
 }
 
 export default function PostList({ posts }: PostListProps) {
