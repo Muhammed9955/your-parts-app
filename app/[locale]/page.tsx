@@ -23,7 +23,9 @@ export default function PostsPage() {
     ITEMS_PER_PAGE
   );
 
-  const totalPages = data ? Math.ceil(data.total / ITEMS_PER_PAGE) : 0;
+  // console.log({ data });
+  const totalPages = Math.ceil((data?.total ?? 0) / ITEMS_PER_PAGE);
+  console.log({ totalPages });
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
     window.scrollTo(0, 0);
@@ -34,7 +36,7 @@ export default function PostsPage() {
 
   // // Fetch posts with React Query
   // const { data, isLoading, isError } = useGetPosts(page, limit);
-  console.log({ data });
+  // console.log({ data });
   const posts = data?.documents || [];
 
   if (isLoading) {
