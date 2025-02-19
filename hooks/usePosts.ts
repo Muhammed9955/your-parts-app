@@ -10,7 +10,7 @@ import {
 } from "@/lib/services/posts";
 import { CreatePostDto, UpdatePostDto } from "@/types/post";
 import { DATABASE_ID, POSTS_COLLECTION_ID, databases } from "@/lib/appwrite";
-import { Query } from "appwrite";
+import { Models, Query } from "appwrite";
 
 export function useAppwritePagination(page: number, limit: number) {
   return useQuery({
@@ -30,8 +30,8 @@ export function useAppwritePagination(page: number, limit: number) {
         );
 
         return {
-          documents: response.documents,
-          total: response.total,
+          documents: response.documents as Models.Document[],
+          total: response.total as number,
         };
       } catch (error) {
         console.error("Error fetching paginated documents:", error);
