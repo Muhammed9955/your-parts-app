@@ -6,11 +6,11 @@ import {
   createPost,
   updatePost,
   deletePost,
-  getPaginatedDocuments,
 } from "@/lib/services/posts";
 import { CreatePostDto, UpdatePostDto } from "@/types/post";
 import { DATABASE_ID, POSTS_COLLECTION_ID, databases } from "@/lib/appwrite";
 import { Models, Query } from "appwrite";
+
 
 export function useAppwritePagination(page: number, limit: number) {
   return useQuery({
