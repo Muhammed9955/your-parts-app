@@ -12,7 +12,7 @@ import { CreatePostDto, UpdatePostDto } from "@/types/post";
 import { DATABASE_ID, POSTS_COLLECTION_ID, databases } from "@/lib/appwrite";
 import { Query } from "appwrite";
 
-export function useAppwritePagination(page = 1, limit = 10) {
+export function useAppwritePagination(page: number, limit: number) {
   return useQuery({
     queryKey: ["documents", DATABASE_ID, POSTS_COLLECTION_ID, page, limit],
     queryFn: async () => {
