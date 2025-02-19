@@ -18,13 +18,14 @@ export default function PostsPage() {
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  const { data, isLoading, isError } = useAppwritePagination(
-    currentPage,
-    ITEMS_PER_PAGE
-  );
+  const {
+    data: { total },
+    isLoading,
+    isError,
+  } = useAppwritePagination(currentPage, ITEMS_PER_PAGE);
   // console.log({ data });
-  const totalPages = Math.ceil((data?.total ?? 0) / ITEMS_PER_PAGE);
-  console.log({ totalPages });
+  const totalPages = Math.ceil((total ?? 0) / ITEMS_PER_PAGE);
+  // console.log({ totalPages });
   const handlePageChange = (newPage: number) => {
     setCurrentPage(newPage);
     window.scrollTo(0, 0);
