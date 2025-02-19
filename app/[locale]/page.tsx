@@ -11,11 +11,6 @@ import PostList from "@/components/posts/PostList";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 
-interface AppwritePaginationResponse {
-  total: number;
-  documents: []; // Replace Post with your actual post type interface
-}
-
 const ITEMS_PER_PAGE = 10;
 
 export default function PostsPage() {
@@ -23,7 +18,7 @@ export default function PostsPage() {
 
   const [currentPage, setCurrentPage] = useState(1);
 
- const { data, isLoading, isError } = useAppwritePagination<AppwritePaginationResponse>(
+  const { data, isLoading, isError } = useAppwritePagination(
     currentPage,
     ITEMS_PER_PAGE
   );
