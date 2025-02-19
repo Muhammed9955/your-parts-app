@@ -19,12 +19,15 @@ export default function PostsPage() {
   const [currentPage, setCurrentPage] = useState(1);
 
   const {
-    data: { total, documents },
+    data: {
+      //  total,
+      documents,
+    },
     isLoading,
     isError,
   } = useAppwritePagination(currentPage, ITEMS_PER_PAGE);
   // console.log({ data });
-  const totalPages = Math.ceil((total ?? 0) / ITEMS_PER_PAGE);
+  // const totalPages = Math.ceil((total ?? 0) / ITEMS_PER_PAGE);
   // console.log({ totalPages });
   const handlePageChange = (newPage: number) => {
     setCurrentPage(newPage);
@@ -62,7 +65,8 @@ export default function PostsPage() {
 
       <Pagination
         currentPage={currentPage}
-        totalPages={totalPages}
+        // totalPages={totalPages}
+        totalPages={2}
         onPageChange={handlePageChange}
       />
     </div>
